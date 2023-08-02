@@ -1,0 +1,28 @@
+class Playlist {
+  constructor(capacity) {
+    this.capacity = capacity;
+    this.songs = [];
+  }
+
+ 
+
+  play(song) {
+    if (this.songs.length >= this.capacity) {
+      
+      this.songs.shift();
+    }
+    this.songs.push(song);
+  }
+
+   getPlaylist() {
+    return this.songs;
+  }
+}
+const myPlaylist = new Playlist(3);
+myPlaylist.play("Song A");
+myPlaylist.play("Song B");
+myPlaylist.play("Song C");
+myPlaylist.play("Song D");
+
+const currentPlaylist = myPlaylist.getPlaylist();
+console.log(currentPlaylist);
